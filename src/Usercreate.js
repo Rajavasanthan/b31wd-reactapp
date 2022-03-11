@@ -16,7 +16,7 @@ function Usercreate() {
               "Authorization" : localStorage.getItem("app_token")
           }
       })
-        navigate(`/`);
+        navigate(`/users`);
     },
   });
   return (
