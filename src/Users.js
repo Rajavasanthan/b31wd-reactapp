@@ -19,7 +19,11 @@ function Users() {
     }
 
     let handleDelete = async (id) => {
-        await axios.delete(`https://b31wd-node.herokuapp.com/delete/${id}`)
+        await axios.delete(`https://b31wd-node.herokuapp.com/delete/${id}`,{
+            headers : {
+                "Authorization" : localStorage.getItem("app_token")
+            }
+        })
         getData()
     }
     return (

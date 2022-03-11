@@ -12,12 +12,20 @@ function Useredit() {
             email: "",
         },
         onSubmit: async (values) => {
-            await axios.put(`https://b31wd-node.herokuapp.com/edit/${params.id}`, values)
+            await axios.put(`https://b31wd-node.herokuapp.com/edit/${params.id}`, values,{
+                headers : {
+                    "Authorization" : localStorage.getItem("app_token")
+                }
+            })
             navigate(`/`);
         },
     });
     useEffect(async () => {
-       let user = await axios.get(`https://b31wd-node.herokuapp.com/user/${params.id}`)
+       let user = await axios.get(`https://b31wd-node.herokuapp.com/user/${params.id}`,{
+        headers : {
+            "Authorization" : localStorage.getItem("app_token")
+        }
+    })
        console.log(user.data)
         delete user.data._id
         formik.setValues(user.data)
