@@ -14,7 +14,7 @@ function Login() {
             try {
                 let login = await axios.post("https://b31wd-node.herokuapp.com/login",values);
                 window.localStorage.setItem("app_token",login.data.token)
-                navigate("/")
+                navigate("/users")
             } catch (error) {
                 alert("User Name / Password Incorrect")
             }
