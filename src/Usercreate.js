@@ -11,7 +11,7 @@ function Usercreate() {
       email: "",
     },
     onSubmit: async (values) => {
-        await axios.post("http://localhost:3000/create-user",values)
+        await axios.post("https://b31wd-node.herokuapp.com/create-user",values)
         navigate(`/`);
     },
   });

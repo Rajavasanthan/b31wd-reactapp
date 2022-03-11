@@ -13,7 +13,7 @@ function Register() {
           password : ''
         },
         onSubmit: async (values) => {
-            await axios.post("http://localhost:3000/register",values);
+            await axios.post("https://b31wd-node.herokuapp.com/register",values);
             navigate(`/login`);
         },
       });
